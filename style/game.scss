@@ -18,7 +18,7 @@ body {
 }
 #confettis {
   position: absolute;
-  top: -40%;
+  top: -50%;
   height: 100%;
   width: 90vw;
   z-index: 1;
@@ -169,12 +169,7 @@ body {
   border: none;
 }
 
-.button-20 {
-  background-color: #c50a0a;
-}
-.button-19 {
-  background-color: #1899d6;
-}
+
 .button-19 {
   appearance: button;
   border: solid transparent;
@@ -235,7 +230,6 @@ body {
 
 .button-19:after {
   background-clip: padding-box;
-  background-color: #1cb0f6;
   border: solid transparent;
   border-radius: 16px;
   border-width: 0 0 4px;

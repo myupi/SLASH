@@ -38,9 +38,12 @@ setTimeout(() => {
       btn.style.position = "absolute";
       btn.style.left = Math.random() * container.offsetWidth + "px";
       btn.style.top = Math.random() * container.offsetHeight + "px";
+      let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      btn.style.backgroundColor = "#" + randomColor;
       container.appendChild(btn);
       setButtonPosition(btn);
     });
+
     arr.forEach((elem) => {
       let btn = document.createElement("button");
       btn.textContent = elem.english;
@@ -50,6 +53,10 @@ setTimeout(() => {
       btn.style.zIndex = Math.floor(Math.random() * 100) + 1;
       btn.style.left = Math.random() * container.offsetWidth + "px";
       btn.style.top = Math.random() * container.offsetHeight + "px";
+
+      let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      btn.style.backgroundColor = "#" + randomColor;
+
       container.appendChild(btn);
       setButtonPosition(btn);
     });
@@ -131,11 +138,11 @@ setTimeout(() => {
               con.classList.remove("con-animation");
             });
           }, 1000);
-           setInterval((
-            
-           ) => { confetti.forEach(con => {
-            con.classList.remove("con-animation");
-          })}, 3000)
+          setInterval(() => {
+            confetti.forEach((con) => {
+              con.classList.remove("con-animation");
+            });
+          }, 3000);
           score.innerHTML++;
 
           selectedButtons = [];
