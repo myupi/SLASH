@@ -124,6 +124,7 @@ buttons.forEach((button) => {
           btn.disabled = true;
           console.log(btn);
         });
+        
         score.innerHTML++;
         selectedButtons = [];
       } else {
