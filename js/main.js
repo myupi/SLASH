@@ -21,6 +21,7 @@ buttonsLvl.forEach((button) => {
     setTimeout(() => {
       levelSection.classList.add("d-none");
     }, 1000);
+     gameSection.classList.add("d-block");
   });
 });
 
@@ -28,10 +29,6 @@ const gameSection = document.getElementById("game");
 buttonsLvl.forEach((button) => {
   button.addEventListener("click", (e) => {
     e.preventDefault();
-
-    
-
-  
 
     levelSection.classList.add("levelAnimation");
     setTimeout(() => {
@@ -42,7 +39,7 @@ buttonsLvl.forEach((button) => {
   });
 });
 
-const container = document.querySelector(".container");
+const container = document.querySelector(".box");
 const score = document.querySelector(".score");
 const time = document.querySelector(".time");
 
