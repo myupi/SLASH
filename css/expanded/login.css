@@ -30,6 +30,7 @@ body section .container form input {
   padding: 10px 15px;
   position: relative;
   background-color: deepskyblue;
+  font-family: "Sriracha";
   color: white;
   border: 0;
 }
@@ -72,6 +73,7 @@ body section .container form .flags {
   width: 200px;
   height: 200px;
   right: -20%;
+  top: 100px;
   transform: rotateZ(-15deg);
 }
 body section .container .bees:nth-child(1) {
@@ -104,15 +106,46 @@ body section .container .bees-2 .right-bee {
   animation-play-state: running;
 }
 body section .container .bees-2 .right-bee:nth-child(1) {
+  transform: rotateZ(-22deg);
   animation-name: bee3;
   animation-delay: 1.4s;
 }
 body section .container .bees-2 .right-bee:nth-child(2) {
-  transform: rotateY(0.5turn) rotateZ(22deg);
+  transform: rotateZ(22deg);
   animation-name: bee4;
   animation-delay: 1s;
 }
 
+.form_password {
+  position: relative;
+}
+.form_password #togglePassword {
+  position: absolute;
+  right: 30px;
+  top: 5px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.login_section {
+  animation-name: loginSection;
+  animation-duration: 1.5s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+@keyframes loginSection {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes Earth {
   100% {
     transform: rotateZ(1turn);

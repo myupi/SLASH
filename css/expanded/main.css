@@ -1,5 +1,4 @@
 #level {
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   background-image: url(../images/lavel-background.jpg);
   background-repeat: no-repeat;
@@ -9,24 +8,13 @@
 .level {
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 30px;
 }
@@ -40,8 +28,7 @@
   position: absolute;
   top: 5%;
   left: 20%;
-  -webkit-transform: rotateZ(20deg);
-          transform: rotateZ(20deg);
+  transform: rotateZ(20deg);
 }
 
 .document {
@@ -59,17 +46,7 @@
 }
 
 .animation {
-  -webkit-animation: levelSection 1s 0s;
-          animation: levelSection 1s 0s;
-}
-
-@-webkit-keyframes levelSection {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  animation: levelSection 1s 0s;
 }
 
 @keyframes levelSection {
@@ -97,10 +74,7 @@
     width: 100%;
   }
   .btn-group {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     gap: 8px;
   }
   .bag {

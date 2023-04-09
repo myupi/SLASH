@@ -26,6 +26,7 @@ body {
           padding: 10px 15px;
           position: relative;
           background-color: deepskyblue;
+          font-family: "Sriracha";
           color: white;
           border: 0;
           &::placeholder {
@@ -65,6 +66,7 @@ body {
           width: 200px;
           height: 200px;
           right: -20%;
+          top: 100px;
           transform: rotateZ(-15deg);
         }
       }
@@ -87,15 +89,16 @@ body {
           animation-play-state: running;
         }
       }
-      .bees-2{
+      .bees-2 {
         gap: 230px;
         .right-bee {
           &:nth-child(1) {
+            transform: rotateZ(-22deg);
             animation-name: bee3;
             animation-delay: 1.4s;
           }
           &:nth-child(2) {
-            transform: rotateY(0.5turn) rotateZ(22deg);
+            transform: rotateZ(22deg);
             animation-name: bee4;
             animation-delay: 1s;
           }
@@ -107,6 +110,37 @@ body {
         }
       }
     }
+  }
+}
+
+.form_password {
+  position: relative;
+  #togglePassword {
+    position: absolute;
+    right: 30px;
+    top: 5px;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+.login_section {
+  animation-name: loginSection;
+  animation-duration: 1.5s;
+  animation-direction: normal;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+@keyframes loginSection {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -162,7 +196,6 @@ body {
     transform: translate(0) rotateY(0.5turn) rotateZ(22deg);
   }
 }
-
 
 @keyframes bee2 {
   0% {
@@ -257,7 +290,6 @@ body {
     transform: translate(0) rotateZ(-22deg);
   }
 }
-
 
 @keyframes bee4 {
   0% {
