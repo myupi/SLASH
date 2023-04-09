@@ -93,6 +93,25 @@ body section .container .bees:nth-child(1) .left-bee:nth-child(2) {
   animation-name: bee1;
   animation-delay: 2s;
 }
+body section .container .bees-2 {
+  gap: 230px;
+}
+body section .container .bees-2 .right-bee {
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+body section .container .bees-2 .right-bee:nth-child(1) {
+  animation-name: bee3;
+  animation-delay: 1.4s;
+}
+body section .container .bees-2 .right-bee:nth-child(2) {
+  transform: rotateY(0.5turn) rotateZ(22deg);
+  animation-name: bee4;
+  animation-delay: 1s;
+}
 
 @keyframes Earth {
   100% {
@@ -167,5 +186,75 @@ body section .container .bees:nth-child(1) .left-bee:nth-child(2) {
   }
   100% {
     transform: translate(0) rotateY(0.5turn) rotateZ(-18deg);
+  }
+}
+@keyframes bee3 {
+  0% {
+    transform: translate(0) rotateZ(-22deg);
+  }
+  10% {
+    transform: translate(-5px, -5px) rotateZ(-22deg);
+  }
+  20% {
+    transform: translate(5px, -5px) rotateZ(-22deg);
+  }
+  30% {
+    transform: translate(-5px, 5px) rotateZ(-22deg);
+  }
+  40% {
+    transform: translate(5px, 5px) rotateZ(-22deg);
+  }
+  50% {
+    transform: translate(-5px, -5px) rotateZ(-22deg);
+  }
+  60% {
+    transform: translate(5px, -5px) rotateZ(-22deg);
+  }
+  70% {
+    transform: translate(-5px, 5px) rotateZ(-22deg);
+  }
+  80% {
+    transform: translate(-5px, -5px) rotateZ(-22deg);
+  }
+  90% {
+    transform: translate(5px, -5px) rotateZ(-22deg);
+  }
+  100% {
+    transform: translate(0) rotateZ(-22deg);
+  }
+}
+@keyframes bee4 {
+  0% {
+    transform: translate(0) rotateZ(22deg);
+  }
+  10% {
+    transform: translate(-5px, -5px) rotateZ(22deg);
+  }
+  20% {
+    transform: translate(5px, -5px) rotateZ(22deg);
+  }
+  30% {
+    transform: translate(-5px, 5px) rotateZ(22deg);
+  }
+  40% {
+    transform: translate(5px, 5px) rotateZ(22deg);
+  }
+  50% {
+    transform: translate(-5px, -5px) rotateZ(22deg);
+  }
+  60% {
+    transform: translate(5px, -5px) rotateZ(22deg);
+  }
+  70% {
+    transform: translate(-5px, 5px) rotateZ(22deg);
+  }
+  80% {
+    transform: translate(-5px, -5px) rotateZ(22deg);
+  }
+  90% {
+    transform: translate(5px, -5px) rotateZ(22deg);
+  }
+  100% {
+    transform: translate(0) rotateZ(22deg);
   }
 }
