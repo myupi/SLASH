@@ -6,6 +6,11 @@ const box = document.querySelector(".boxxx");
 const gamee = document.getElementById("gamee");
 gamee.classList.add("gameAnimation");
 
+let userId = localStorage.getItem("id");
+let user = JSON.parse(localStorage.getItem("login"));
+let findedUser = user.find((e) => e.id == userId);
+let parsed = localStorage.getItem("level");
+
 setTimeout(() => {
   box.classList.add("opacity-0");
 
@@ -16,9 +21,6 @@ setTimeout(() => {
     timm();
     startBtn.disabled = true;
   });
-
-  let parsed = localStorage.getItem("level");
-
   if (parsed == "easy") {
     createBtn(easyLvl);
   } else if (parsed == "medium") {
@@ -29,42 +31,34 @@ setTimeout(() => {
   function createBtn(arr) {
     arr.forEach((elem) => {
       let btn = document.createElement("button");
-
       btn.textContent = elem.uzbek;
       btn.dataset.id = elem.id;
       btn.setAttribute("class", "btn btn-danger random-element button");
-
       btn.style.zIndex = Math.floor(Math.random() * 100) + 1;
       btn.style.position = "absolute";
       btn.style.left = Math.random() * container.offsetWidth + "px";
       btn.style.top = Math.random() * container.offsetHeight + "px";
-
       container.appendChild(btn);
       setButtonPosition(btn);
     });
-
     arr.forEach((elem) => {
       let btn = document.createElement("button");
-
       btn.textContent = elem.english;
       btn.dataset.id = elem.id;
       btn.setAttribute("class", "btn btn-primary random-element button");
-
       btn.style.position = "absolute";
       btn.style.zIndex = Math.floor(Math.random() * 100) + 1;
       btn.style.left = Math.random() * container.offsetWidth + "px";
       btn.style.top = Math.random() * container.offsetHeight + "px";
-
       container.appendChild(btn);
       setButtonPosition(btn);
     });
-    localStorage.removeItem("level");
   }
 
   function setButtonPosition(button) {
     const containerRect = container.getBoundingClientRect();
     const buttonRect = button.getBoundingClientRect();
-    const buttonSize = 75; // Размер кнопки
+    const buttonSize = 75;
 
     let top = getRandomInt(containerRect.height - buttonSize);
     let left = getRandomInt(containerRect.width - buttonSize);
@@ -167,7 +161,10 @@ setTimeout(() => {
       startBtn.disabled = false;
       alert("Vaqt tugadi!");
       time.style.color = "black";
-      location.href = "../main.html";
     }, 22000);
   }
 }, 2000);
+
+window.addEventListener("beforeunload", () => {
+  localStorage.removeItem("level");
+});
