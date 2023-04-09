@@ -42,47 +42,43 @@
           />
         </div>
         <form id="loginForm" class="needs-validation">
-          <div class="div">
+          <input
+            type="text"
+            placeholder="Enter your username"
+            class="form-control"
+            id="inputLogin"
+            name="user"
+            required
+          />
+          <div class="form_password w-100">
             <input
-              type="text"
-              placeholder="Enter your username"
+              type="password"
+              placeholder="Enter your password"
               class="form-control"
-              id="inputLogin"
-              name="user"
+              id="inputPassword"
+              name="password"
               required
             />
-            <div class="form_password w-100">
-              <input
-                type="password"
-                placeholder="Enter your password"
-                class="form-control"
-                id="inputPassword"
-                name="password"
-                required
-              />
-              <i class="bi bi-eye-slash" id="togglePassword"></i>
-            </div>
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
           </div>
-          <div class="puj">
+          <input
+            type="text"
+            placeholder="Enter your username"
+            class="form-control"
+            id="inputSignUp"
+            name="user"
+            required
+          />
+          <div class="form_password w-100">
             <input
-              type="text"
-              placeholder="Enter your username"
+              type="password"
+              placeholder="Enter your password"
               class="form-control"
-              id="inputSignUp"
-              name="user"
+              id="inputSignUpPassword"
+              name="password"
               required
             />
-            <div class="form_password w-100">
-              <input
-                type="password"
-                placeholder="Enter your password"
-                class="form-control"
-                id="inputSignUpPassword"
-                name="password"
-                required
-              />
-              <i class="bi bi-eye-slash" id="togglePassword"></i>
-            </div>
+            <i class="bi bi-eye-slash" id="togglePassword"></i>
           </div>
           <button type="submit" class="login_btn log btn">
             Sign Up

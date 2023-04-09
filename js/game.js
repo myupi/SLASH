@@ -1,8 +1,20 @@
 const container = document.querySelector(".container");
 const score = document.querySelector(".score");
 const time = document.querySelector(".time");
+const startBtn = document.getElementById("start");
+const box = document.querySelector(".boxxx");
+
+box.classList.add("opacity-0");
+
+startBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  box.classList.remove("opacity-0");
+  box.classList.add("animation");
+  timm();
+});
 
 let parsed = localStorage.getItem("level");
+
 if (parsed == "easy") {
   createBtn(easyLvl);
 } else if (parsed == "medium") {
@@ -44,7 +56,6 @@ function createBtn(arr) {
     container.appendChild(btn);
     setButtonPosition(btn);
   });
-  timm();
   localStorage.removeItem("level");
 }
 
@@ -141,5 +152,6 @@ function timm() {
     container.innerHTML = null;
     alert("Vaqt tugadi!");
     time.style.color = "black";
+    location.href = "../main.html";
   }, 22000);
 }
