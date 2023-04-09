@@ -180,7 +180,6 @@ setTimeout(() => {
         location.href = "../main.html";
       }
       startBtn.disabled = false;
-      alert("Vaqt tugadi!");
       time.style.color = "black";
     }, 22000);
   }
