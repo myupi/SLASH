@@ -1,6 +1,24 @@
+body {
+    background-image: url("../images/level-back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+* {
+    font-family: "Sriracha";
+}
+.boxxx {
+    overflow: hidden;
+}
+.container-cus {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
 #confettis {
     position: absolute;
-    top: -20px;
+    top: -40%;
     height: 100%;
     width: 90vw;
     z-index: -1;
@@ -15,7 +33,7 @@
   }
 
    .con-animation {
-    animation: confetti 5s ease-in-out 0s 1;
+    animation: confetti 3s ease-in-out 0s 1;
    }
 
   @keyframes confetti {
@@ -85,3 +103,71 @@
     animation-delay: -2.5s;
     background-color: #f9c4ea;
   }
+
+  #start {
+    --s: 0.25em; /* control the wave*/
+  
+    padding: .5em 1.2em;
+    background-color: #bf4d28;
+    color: #fff;
+    --_s: calc(var(--s) * 4) 51% repeat-x;
+    --_r: calc(1.345 * var(--s)) at left 50%;
+    --_g1: #000 99%, #0000 101%;
+    --_g2: #0000 99%, #000 101%;
+    --mask: radial-gradient(var(--_r) top calc(var(--s) * 1.9), var(--_g1))
+        calc(50% - 2 * var(--s) - var(--_i, 0px)) 0 / var(--_s),
+      radial-gradient(var(--_r) top calc(var(--s) * -0.9), var(--_g2))
+        calc(50% - var(--_i, 0px)) var(--s) / var(--_s),
+      radial-gradient(var(--_r) bottom calc(var(--s) * 1.9), var(--_g1))
+        calc(50% - 2 * var(--s) + var(--_i, 0px)) 100% / var(--_s),
+      radial-gradient(var(--_r) bottom calc(var(--s) * -0.9), var(--_g2))
+        calc(50% + var(--_i, 0px)) calc(100% - var(--s)) / var(--_s);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+    clip-path: polygon(
+      calc(2 * var(--s) - var(--_i, 0px)) 0,
+      calc(100% - var(--_i, 0px)) 0,
+      calc(100% - var(--s)) 50%,
+      calc(100% - 2 * var(--s) + var(--_i, 0px)) 100%,
+      calc(0% + var(--_i, 0px)) 100%,
+      var(--s) 50%
+    );
+    cursor: pointer;
+    transition: 0.35s;
+  }
+  #start.alt {
+    clip-path: polygon(
+      calc(0% - var(--_i, 0px)) 0,
+      calc(100% - 2 * var(--s) - var(--_i, 0px)) 0,
+      calc(100% - var(--s)) 50%,
+      calc(100% + var(--_i, 0px)) 100%,
+      calc(2 * var(--s) + var(--_i, 0px)) 100%,
+      var(--s) 50%
+    );
+  }
+  #start:hover {
+    --_i: calc(2 * var(--s));
+  }
+  #start.alt:hover {
+    --_i: calc(-2 * var(--s));
+  }
+  #start:active {
+    background-image: linear-gradient(#0004 0 0);
+  }
+  #start:focus-visible {
+    -webkit-mask: none;
+    clip-path: none;
+    outline-offset: 0.1em;
+    padding-block: 0.2em;
+    margin-block: 0.2em;
+    transition: 0s;
+  }
+  
+  #start {
+    font-family: system-ui, sans-serif;
+    font-size: 2.5rem;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+  }
+  
