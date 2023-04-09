@@ -20,6 +20,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/global.css" />
+    <style>
+      * {
+        position: relative;
+      }
+      *:not(.random-element) {
+        z-index: 1;
+      }
+    </style>
   </head>
   <body>
     <section id="level">
@@ -46,19 +54,18 @@
       </div>
     </section>
     <section id="game" class="d-none">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci maxime
-      laboriosam neque facere aliquam minima sapiente a numquam, alias
-      blanditiis dolores repudiandae minus voluptates velit maiores accusamus
-      aut enim totam.
-      <div class="container">
-        <img src="./images/back.jpg" alt="" />
+      <div class="boxxx">
+        <h2>Score: <scan class="score">0</scan></h2>
+        <h3>Time: <scan class="time">20</scan></h3>
       </div>
     </section>
+    <div class="container box" style=" height: 700px;"></div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/const.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
