@@ -26,7 +26,7 @@ loginForm.addEventListener("submit", function (e) {
       hard: [],
     },
   };
-  userInformation.push(obj);
   localStorage.setItem("login", JSON.stringify(userInformation));
+  userInformation.push(obj);
   location.href = "../main.html";
 });
