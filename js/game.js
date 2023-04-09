@@ -14,6 +14,7 @@ setTimeout(() => {
     box.classList.remove("opacity-0");
     box.classList.add("gameAnimation");
     timm();
+    startBtn.disabled = true;
   });
 
   let parsed = localStorage.getItem("level");
@@ -135,7 +136,7 @@ setTimeout(() => {
             
            ) => { confetti.forEach(con => {
             con.classList.remove("con-animation");
-          })}, 1000)
+          })}, 3000)
           score.innerHTML++;
           
           selectedButtons = [];
@@ -163,6 +164,7 @@ setTimeout(() => {
 
     setTimeout(() => {
       container.innerHTML = null;
+      startBtn.disabled = false;
       alert("Vaqt tugadi!");
       time.style.color = "black";
       location.href = "../main.html";
