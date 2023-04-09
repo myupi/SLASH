@@ -1,6 +1,6 @@
 const levelSection = document.getElementById("level");
 const buttonsLvl = document.querySelectorAll(".level-btn");
-const gamee = document.getElementById("gamee");
+
 
 buttonsLvl.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -18,7 +18,7 @@ buttonsLvl.forEach((button) => {
         localStorage.setItem("level", level);
         location.href = "../game.html";
       }
-      gamee.classList.add("gameAnimation");
+      
     }, 1000);
      gameSection.classList.add("d-block");
   });
