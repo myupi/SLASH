@@ -3,6 +3,7 @@ const inputLogin = document.getElementById("inputLogin");
 const inputPassword = document.getElementById("inputPassword");
 const togglePassword = document.querySelector("#togglePassword");
 const loginBtn = document.getElementById("login_btn");
+
 togglePassword.addEventListener("click", function () {
   const type =
     inputPassword.getAttribute("type") === "password" ? "text" : "password";
