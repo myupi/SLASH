@@ -33,7 +33,7 @@ setTimeout(() => {
       let btn = document.createElement("button");
       btn.textContent = elem.uzbek;
       btn.dataset.id = elem.id;
-      btn.setAttribute("class", "btn btn-danger random-element button");
+      btn.setAttribute("class", "button-20 random-element button");
       btn.style.zIndex = Math.floor(Math.random() * 100) + 1;
       btn.style.position = "absolute";
       btn.style.left = Math.random() * container.offsetWidth + "px";
@@ -45,7 +45,7 @@ setTimeout(() => {
       let btn = document.createElement("button");
       btn.textContent = elem.english;
       btn.dataset.id = elem.id;
-      btn.setAttribute("class", "btn btn-primary random-element button");
+      btn.setAttribute("class", "button-19  random-element button");
       btn.style.position = "absolute";
       btn.style.zIndex = Math.floor(Math.random() * 100) + 1;
       btn.style.left = Math.random() * container.offsetWidth + "px";
@@ -126,19 +126,16 @@ setTimeout(() => {
               con.classList.add("con-animation");
             });
           });
-<<<<<<< HEAD
           setInterval(() => {
             confetti.forEach((con) => {
               con.classList.remove("con-animation");
             });
           }, 1000);
-=======
            setInterval((
             
            ) => { confetti.forEach(con => {
             con.classList.remove("con-animation");
           })}, 3000)
->>>>>>> 1a66793d95a64678f80fb86f13864bdb8de40420
           score.innerHTML++;
 
           selectedButtons = [];
@@ -167,6 +164,7 @@ setTimeout(() => {
     setTimeout(() => {
       container.innerHTML = null;
       let confirmBtn = confirm("Do you want to play again ?");
+      score.innerHTML = 0;
       if (confirmBtn) {
         if (parsed == "easy") {
           createBtn(easyLvl);
