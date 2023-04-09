@@ -24,11 +24,6 @@ signBtn.addEventListener("click", (evt) => {
     id: userInformation.length + 1,
     username: inputLoginValue,
     password: inputPasswordValue,
-    levels: {
-      easy: [],
-      medium: [],
-      hard: [],
-    },
   };
   userInformation.push(obj);
   console.log(obj.id);
