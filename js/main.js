@@ -1,5 +1,6 @@
 const levelSection = document.getElementById("level");
 const buttons = document.querySelectorAll(".level-btn");
+<<<<<<< HEAD
 const loginForm = document.getElementById("loginForm");
 const inputLogin = document.getElementById("inputLogin");
 const inputPassword = document.getElementById("inputPassword");
@@ -42,4 +43,22 @@ loginForm.addEventListener("submit", function () {
   userInformation.push(obj);
   localStorage.setItem("login", JSON.stringify(userInformation));
   location.href = "main.html";
+=======
+const gameSection = document.getElementById("game");
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let level = e.target.dataset.id;
+
+    localStorage.setItem("level", level);
+
+    levelSection.classList.add("levelAnimation");
+    setTimeout(() => {
+      levelSection.classList.add("d-none");
+    }, 1000);
+    gameSection.classList.remove("d-none");
+    gameSection.classList.add("gameAnimation");
+  });
+>>>>>>> 3570ea44917001195009d9041bf679ad7684f2d3
 });
