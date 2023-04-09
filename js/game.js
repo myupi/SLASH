@@ -1,50 +1,16 @@
-const levelSection = document.getElementById("level");
-const buttonsLvl = document.querySelectorAll(".level-btn");
-
-buttonsLvl.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    let level = e.target.dataset.id;
-    if (level == "easy") {
-      localStorage.setItem("level", level);
-      location.href = "../game.html";
-    } else if (level == "medium") {
-      localStorage.setItem("level", level);
-      location.href = "../game.html";
-    } else {
-      localStorage.setItem("level", level);
-      location.href = "../game.html";
-    }
-
-    levelSection.classList.add("animation");
-    setTimeout(() => {
-      levelSection.classList.add("d-none");
-    }, 1000);
-     gameSection.classList.add("d-block");
-  });
-});
-
-const gameSection = document.getElementById("game");
-buttonsLvl.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    
-
-  
-
-    levelSection.classList.add("levelAnimation");
-    setTimeout(() => {
-      levelSection.classList.add("d-none");
-    }, 1000);
-    gameSection.classList.remove("d-none");
-    gameSection.classList.add("gameAnimation");
-  });
-});
-
 const container = document.querySelector(".container");
 const score = document.querySelector(".score");
 const time = document.querySelector(".time");
+
+let parsed = localStorage.getItem("level");
+if (parsed == "easy") {
+  createBtn(easyLvl);
+} else if (parsed == "medium") {
+  createBtn(mediumLvl);
+} else {
+  createBtn(hardLvl);
+}
+console.log(parsed);
 
 function createBtn(arr) {
   arr.forEach((elem) => {
@@ -78,6 +44,8 @@ function createBtn(arr) {
     container.appendChild(btn);
     setButtonPosition(btn);
   });
+  timm();
+  localStorage.removeItem("level");
 }
 
 function setButtonPosition(button) {
@@ -145,6 +113,7 @@ buttons.forEach((button) => {
           btn.disabled = true;
           console.log(btn);
         });
+        
         score.innerHTML++;
         selectedButtons = [];
       } else {
@@ -155,24 +124,23 @@ buttons.forEach((button) => {
   });
 });
 
-function timm(){
-    let timer = 20;
-    let timmer = setInterval(() => {
-  time.innerHTML = timer;
-  console.log(123);
-  timer--;
-  if (timer == -1) {
-    clearInterval(timmer);
-  }
-  if (timer == 4) {
-    time.style.color = "red";
-  }
-}, 1000);
+function timm() {
+  let timer = 20;
+  let timmer = setInterval(() => {
+    time.innerHTML = timer;
+    console.log(123);
+    timer--;
+    if (timer == -1) {
+      clearInterval(timmer);
+    }
+    if (timer == 4) {
+      time.style.color = "red";
+    }
+  }, 1000);
 
-setTimeout(() => {
-  container.innerHTML = null;
-  alert("Vaqt tugadi!");
-  time.style.color = "black";
-}, 22000);
+  setTimeout(() => {
+    container.innerHTML = null;
+    alert("Vaqt tugadi!");
+    time.style.color = "black";
+  }, 22000);
 }
-

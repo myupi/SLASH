@@ -1,6 +1,5 @@
 #level {
   transition: all 0.4s ease-in-out;
-  background-color: #009be1;
   background-image: url("../images/level-back.jpg");
   background-position: right;
   background-repeat: no-repeat;
@@ -9,6 +8,11 @@
 
 .level-card-text {
   color: #fff;
+  font-family: "Sriracha", cursive !important;
+}
+
+.boxcccxcc {
+  position: relative !important;
 }
 
 .level {
@@ -25,58 +29,21 @@
   gap: 30px;
 }
 
-<<<<<<< HEAD:css/expanded/main.css
-.level-btn {
-  font-family: "Sriracha", cursive !important;
-}
-
-.bag {
-  max-width: 200px;
-  position: absolute;
-  top: 5%;
-  left: 20%;
-  transform: rotateZ(20deg);
-}
-
-.document {
-  max-width: 250px;
-  position: absolute;
-  bottom: 10%;
-  right: 15%;
-}
-
-=======
->>>>>>> 3570ea44917001195009d9041bf679ad7684f2d3:css/main.css
 .level-card {
-  padding: 60px 80px;
-  background-color: rgba(0, 0, 0, 0.24);
-  z-index: 999;
+  border: 1px solid rgba(24, 24, 24, 0.2392156863);
+  padding: 100px 80px;
+  background-color: rgba(0, 0, 0, 0.404);
+  z-index: 9;
   border-radius: 6px;
-  -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
-          box-shadow: 0 0 10px rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
-<<<<<<< HEAD:css/expanded/main.css
-.animation {
-  animation: levelSection 1s 0s;
-=======
 .levelAnimation {
-  -webkit-animation: levelSection 2s 0s;
-          animation: levelSection 2s 0s;
+  animation: levelSection 2s 0s;
 }
 
 .gameAnimation {
-  -webkit-animation: gameSection 4s 0s;
-          animation: gameSection 4s 0s;
-}
-
-@-webkit-keyframes gameSection {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: gameSection 4s 0s;
 }
 
 @keyframes gameSection {
@@ -86,15 +53,6 @@
   100% {
     opacity: 1;
   }
-}
-@-webkit-keyframes levelSection {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
->>>>>>> 3570ea44917001195009d9041bf679ad7684f2d3:css/main.css
 }
 @keyframes levelSection {
   0% {
@@ -113,6 +71,9 @@
     gap: 8px;
   }
   .level-card {
-    padding: 30px 40px;
+    padding: 50px 40px;
   }
+}
+.box {
+  height: 100%;
 }

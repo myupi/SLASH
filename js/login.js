@@ -2,7 +2,7 @@ const loginForm = document.getElementById("loginForm");
 const inputLogin = document.getElementById("inputLogin");
 const inputPassword = document.getElementById("inputPassword");
 const togglePassword = document.querySelector("#togglePassword");
-
+const loginBtn = document.getElementById("login_btn");
 togglePassword.addEventListener("click", function () {
   const type =
     inputPassword.getAttribute("type") === "password" ? "text" : "password";
@@ -12,7 +12,8 @@ togglePassword.addEventListener("click", function () {
 
 let userInformation = JSON.parse(localStorage.getItem("login")) || [];
 
-loginForm.addEventListener("submit", function () {
+loginForm.addEventListener("submit", function (e) {
+  e.preventDefault();
   let inputLoginValue = inputLogin.value;
   let inputPasswordValue = inputPassword.value;
   let obj = {
@@ -25,7 +26,7 @@ loginForm.addEventListener("submit", function () {
       hard: [],
     },
   };
-  userInformation.push(obj);
   localStorage.setItem("login", JSON.stringify(userInformation));
-  location.href = "main.html";
+  userInformation.push(obj);
+  location.href = "../main.html";
 });
