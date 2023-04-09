@@ -1,4 +1,5 @@
-.level-btn {
+.level-btn,
+.login_btn {
   border: none !important;
   padding: 6px 12px !important;
   border-radius: 8px !important;
@@ -20,7 +21,6 @@
   position: absolute;
   width: 25%;
   height: 100%;
-  background-color: var(--c);
   -webkit-transform: translateY(150%);
           transform: translateY(150%);
   border-radius: 50%;
@@ -63,4 +63,53 @@
 
 .btn-danger span {
   background-color: rgb(255, 0, 0);
+}
+
+.login_btn {
+  font-family: "Sriracha", cursive !important;
+}
+
+.login_btn span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: calc((var(--n) - 1) * 0.1s);
+          transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.login_btn:hover span {
+  -webkit-transform: translateY(0) scale(2);
+          transform: translateY(0) scale(2);
+}
+
+.login_btn span:nth-child(1) {
+  --n: 1;
+}
+
+.login_btn span:nth-child(2) {
+  --n: 2;
+}
+
+.login_btn span:nth-child(3) {
+  --n: 3;
+}
+
+.login_btn span:nth-child(4) {
+  --n: 4;
+}
+
+.login_btn {
+  width: 50%;
+  padding: 15px;
+  background-color: #006594;
+}
+.login_btn span {
+  background-color: rgba(0, 101, 148, 0.7);
 }
