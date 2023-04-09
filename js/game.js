@@ -120,18 +120,18 @@ setTimeout(() => {
           selectedButtons.forEach((btn) => {
             btn.disabled = true;
             console.log(btn);
-            // 
-            confetti.forEach(con => {
+            //
+            confetti.forEach((con) => {
               con.classList.add("con-animation");
-            })
+            });
           });
-           setInterval((
-            
-           ) => { confetti.forEach(con => {
-            con.classList.remove("con-animation");
-          })}, 1000)
+          setInterval(() => {
+            confetti.forEach((con) => {
+              con.classList.remove("con-animation");
+            });
+          }, 1000);
           score.innerHTML++;
-          
+
           selectedButtons = [];
         } else {
           selectedButtons = [];
@@ -157,7 +157,19 @@ setTimeout(() => {
 
     setTimeout(() => {
       container.innerHTML = null;
-      alert("Vaqt tugadi!");
+      let confirmBtn = confirm("Do you want to play again ?");
+      if (<confirmBtn></confirmBtn>) {
+        if (parsed == "easy") {
+          createBtn(easyLvl);
+        } else if (parsed == "medium") {
+          createBtn(mediumLvl);
+        } else {
+          createBtn(hardLvl);
+        }
+        timm();
+      } else {
+        location.href = "../main.html";
+      }
       time.style.color = "black";
     }, 22000);
   }
