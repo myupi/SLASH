@@ -1,9 +1,15 @@
 #level {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  background-image: url(../images/lavel-background.jpg);
+  background-color: #009be1;
+  background-image: url("../images/level-back.jpg");
+  background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.level-card-text {
+  color: #fff;
 }
 
 .level {
@@ -24,6 +30,57 @@
           align-items: center;
 }
 
+.level-btn {
+  border: none !important;
+  padding: 6px 12px !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.level-btn span {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background-color: var(--c);
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
+  border-radius: 50%;
+  left: calc((var(--n) - 1) * 25%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transition-delay: calc((var(--n) - 1) * 0.1s);
+          transition-delay: calc((var(--n) - 1) * 0.1s);
+  z-index: -1;
+}
+
+.level-btn:hover span {
+  -webkit-transform: translateY(0) scale(2);
+          transform: translateY(0) scale(2);
+}
+
+.level-btn span:nth-child(1) {
+  --n: 1;
+}
+
+.level-btn span:nth-child(2) {
+  --n: 2;
+}
+
+.level-btn span:nth-child(3) {
+  --n: 3;
+}
+
+.level-btn span:nth-child(4) {
+  --n: 4;
+}
+
 .btn-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,24 +88,20 @@
   gap: 30px;
 }
 
+.btn-success span {
+  background-color: rgb(1, 78, 1);
+}
+
+.btn-warning span {
+  background-color: rgb(255, 231, 19);
+}
+
 .level-btn {
   font-family: "Sriracha", cursive !important;
 }
 
-.bag {
-  max-width: 200px;
-  position: absolute;
-  top: 5%;
-  left: 20%;
-  -webkit-transform: rotateZ(20deg);
-          transform: rotateZ(20deg);
-}
-
-.document {
-  max-width: 250px;
-  position: absolute;
-  bottom: 10%;
-  right: 15%;
+.btn-danger span {
+  background-color: rgb(255, 0, 0);
 }
 
 .level-card {
@@ -56,13 +109,37 @@
   background-color: rgba(0, 0, 0, 0.24);
   z-index: 999;
   border-radius: 6px;
+  -webkit-box-shadow: 0 0 10px rgb(0, 0, 0);
+          box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
-.animation {
-  -webkit-animation: levelSection 1s 0s;
-          animation: levelSection 1s 0s;
+.levelAnimation {
+  -webkit-animation: levelSection 2s 0s;
+          animation: levelSection 2s 0s;
 }
 
+.gameAnimation {
+  -webkit-animation: gameSection 4s 0s;
+          animation: gameSection 4s 0s;
+}
+
+@-webkit-keyframes gameSection {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes gameSection {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @-webkit-keyframes levelSection {
   0% {
     opacity: 1;
@@ -71,25 +148,12 @@
     opacity: 0;
   }
 }
-
 @keyframes levelSection {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  .bag {
-    max-width: 180px;
-    top: 10%;
-    left: 0;
-  }
-  .document {
-    max-width: 180px;
-    bottom: 10%;
-    right: 0;
   }
 }
 @media screen and (max-width: 468px) {
@@ -102,12 +166,6 @@
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 8px;
-  }
-  .bag {
-    max-width: 140px;
-  }
-  .document {
-    max-width: 140px;
   }
   .level-card {
     padding: 30px 40px;
