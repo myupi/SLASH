@@ -5,7 +5,7 @@ const togglePassword = document.querySelector("#togglePassword");
 const loginBtn = document.querySelector(".logbtn");
 const signBtn = document.querySelector(".sigbtn");
 
-console.log(loginBtn, signBtn);
+
 
 togglePassword.addEventListener("click", function () {
   const type =
@@ -26,7 +26,7 @@ signBtn.addEventListener("click", (evt) => {
     password: inputPasswordValue,
   };
   userInformation.push(obj);
-  console.log(obj.id);
+
   let js = obj.id;
   localStorage.setItem("login", JSON.stringify(userInformation));
   localStorage.setItem("id", js);

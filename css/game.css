@@ -22,7 +22,7 @@ body {
 
 #confettis {
   position: absolute;
-  top: -50%;
+  top: -40%;
   height: 100%;
   width: 90vw;
   z-index: 1;
