@@ -105,7 +105,7 @@ setTimeout(() => {
   function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
-
+  const confetti = document.querySelectorAll(".confetti");
   const buttons = document.querySelectorAll(".button");
   let selectedButtons = [];
   let dataid = "";
@@ -126,9 +126,18 @@ setTimeout(() => {
           selectedButtons.forEach((btn) => {
             btn.disabled = true;
             console.log(btn);
+            // 
+            confetti.forEach(con => {
+              con.classList.add("con-animation");
+            })
           });
-
+           setInterval((
+            
+           ) => { confetti.forEach(con => {
+            con.classList.remove("con-animation");
+          })}, 1000)
           score.innerHTML++;
+          
           selectedButtons = [];
         } else {
           selectedButtons = [];
